@@ -4,7 +4,7 @@ import Headlines from './components/NewsHeadlines/Headlines'
 
 export default function App() {
     return (
-        <div className="container">
+        <div className="container-fluid my-5">
             <Headlines/>
         </div>
     );
