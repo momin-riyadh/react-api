@@ -1,6 +1,7 @@
 import React, {Component} from "react";
-import SingleHeadline from "./SingleHeadlines";
 import axios from 'axios';
+import SingleHeadline from "./SingleHeadlines";
+
 
 class Headlines extends Component {
     constructor(props) {
