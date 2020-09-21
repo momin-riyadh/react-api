@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import SingleHeadline from "./SingleHeadlines";
+import axios from 'axios';
 
 class Headlines extends Component {
     constructor(props) {
@@ -13,16 +14,13 @@ class Headlines extends Component {
         const apiUrl =
             "https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=63776d05d7374eea9f0e441a573b30a8";
 
-        fetch(apiUrl)
+        axios.get(apiUrl)
             .then((response) => {
-                return response.json();
-            })
-            .then((data) => {
                 this.setState({
-                    news: data.articles
-                });
+                    news: response.data.articles
+                })
             })
-            .catch((error) => console.log(error));
+            .catch((error) => console.log(error))
     }
 
     renderItems() {
